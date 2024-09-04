@@ -8,11 +8,26 @@
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.justlookatnow.qpaasmigrationcreate.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <toolWindow factoryClass="com.github.justlookatnow.qpaasmigrationcreate.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
+<!--    </extensions>-->
 
-    <applicationListeners>
-        <listener class="com.github.justlookatnow.qpaasmigrationcreate.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+<!--    <applicationListeners>-->
+<!--        <listener class="com.github.justlookatnow.qpaasmigrationcreate.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>-->
+<!--    </applicationListeners>-->
+
+    <actions>
+        <action id="com.github.justlookatnow.qpaasmigrationcreate.CreateFlywayMigrationAction"
+                class="com.github.justlookatnow.qpaasmigrationcreate.CreateFlywayMigrationAction"
+                text="Flyway Migration"
+                description="创建一个新的Flyway迁移文件">
+            <add-to-group group-id="NewGroup" anchor="last"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.github.justlookatnow.qpaasmigrationcreate.FlywayMigrationSettings"/>
+        <applicationConfigurable instance="com.github.justlookatnow.qpaasmigrationcreate.FlywayMigrationSettingsConfigurable"/>
+    </extensions>
 </idea-plugin>
+
