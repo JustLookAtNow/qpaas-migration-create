@@ -13,7 +13,7 @@ public class FlywayMigrationSettingsConfigurable implements Configurable {
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
     public String getDisplayName() {
-        return "Flyway Migration Settings";
+        return "Qpaas Migration Settings";
     }
 
     @Nullable
