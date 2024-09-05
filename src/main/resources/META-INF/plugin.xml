@@ -20,6 +20,7 @@
         <action id="com.github.justlookatnow.qpaasmigrationcreate.CreateFlywayMigrationAction"
                 class="com.github.justlookatnow.qpaasmigrationcreate.CreateFlywayMigrationAction"
                 text="Flyway Migration"
+                icon="/icons/qpaas.svg"
                 description="创建一个新的Flyway迁移文件">
             <add-to-group group-id="NewGroup" anchor="last"/>
         </action>

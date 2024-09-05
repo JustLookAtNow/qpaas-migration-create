@@ -3,14 +3,12 @@ package com.github.justlookatnow.qpaasmigrationcreate;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.application.WriteAction;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiDirectory;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiFileFactory;
-import com.intellij.psi.PsiManager;
+import com.intellij.psi.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -62,8 +60,14 @@ public class CreateFlywayMigrationAction extends AnAction {
         PsiFile file = factory.createFileFromText(fullFileName, PlainTextFileType.INSTANCE , "-- Flyway migration script");
         WriteAction.run(() -> {
             // write data
-            directory.add(file);
+            PsiElement createdFile = directory.add(file);
+            // 获取创建的文件的 VirtualFile
+            VirtualFile virtualFile = createdFile.getContainingFile().getVirtualFile();
+            if (virtualFile != null) {
+                // 打开文件
+                FileEditorManager.getInstance(project).openFile(virtualFile, true);
+            }
         });
-        Messages.showInfoMessage(project, "已创建Flyway迁移文件: " + fullFileName, "文件创建成功");
+//        Messages.showInfoMessage(project, "已创建Flyway迁移文件: " + fullFileName, "文件创建成功");
     }
 }
