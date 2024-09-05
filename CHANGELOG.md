@@ -2,6 +2,7 @@
 
 # qpaas-migration-create Changelog
 
-## [Unreleased]
+## [1.0.0] - 2024-09-05
+
 ### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+- 初始化版本
