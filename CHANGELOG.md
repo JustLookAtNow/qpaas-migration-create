@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [1.0.2] - 2024-12-04
+
+support version 243.x
+
 ## [1.0.1] - 2024-09-06
 
 ### Changed
@@ -16,6 +20,7 @@
 
 - 初始化版本，增加icon，调整一些文本描述
 
-[Unreleased]: https://github.com/JustLookAtNow/qpaas-migration-create/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/JustLookAtNow/qpaas-migration-create/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/JustLookAtNow/qpaas-migration-create/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/JustLookAtNow/qpaas-migration-create/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/JustLookAtNow/qpaas-migration-create/commits/v1.0.0
